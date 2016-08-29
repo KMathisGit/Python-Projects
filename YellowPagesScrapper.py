@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 #You enter what it is that you are looking for, along with the city and state
 #It queries YellowPages and print out results that meet the requirements
 #TO-DO LIST
-#Add save function that will save data in CSV format for spreadsheet usage
 #Allow user to gather results on more than just the first page returned by YellowPages
 
 def scrapePage(thing, city, state):
@@ -56,6 +55,7 @@ def saveData(thing, city, state):
             except:
                 pass
 
+print("Hello! I am a web scrapping tool here to assist you.\nPlease answer the following questions. . .")
 thing = input("What are you looking for?")
 city = input("What city would you like to check?")
 state = input("What state is {} in?".format(city))
