@@ -10,3 +10,6 @@ The following repository is a collective storage of my Python 3 projects.
 ## PokemonListExample 
 - Very simple program that demonstrates all of Python 3 list functions (Append, Extend, Pop, etc). 
 - Program starts with 2 list of Pokemon (Johto starters & Canto starters) then the user can call list functions on the lists.
+
+## TicTacToe
+-Simple text version of the ever so popular board game TicTacToe.
