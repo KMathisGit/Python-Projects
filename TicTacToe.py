@@ -6,6 +6,8 @@ global ongoing
 ongoing = True
 global currentPlayer
 currentPlayer = 1
+global theBoard
+theBoard = ['[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]']
 
 #Function used to print the board out at the beginning and after every time board is marked
 def display_board(board):
@@ -63,7 +65,7 @@ def check_condition(player, board):
         global currentPlayer
         global ongoing
         full = False
-        if '[ ]' not in board:
+        if '[ ]' not in board and ongoing == True:
             full = True
         if full:
             print('Board is full and there is no winner.')
@@ -78,14 +80,19 @@ def check_condition(player, board):
 
 #Function that drives the game, continuously calling mark_board and check_condition functions
 def play_game(board):
+    global ongoing
+    ongoing = True
     display_board(board)
     while ongoing == True:
         mark_board(currentPlayer, board)
         check_condition(currentPlayer, board)
+    answer = raw_input("Do you want to play again? (Y/N):")
+    if answer == 'Y' or 'y':
+        board = ['[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]']
+        play_game(board)
+    else:
+        pass
  
- #Initializing blank board       
-theBoard = ['[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]']
-
 #Calling driver function
 play_game(theBoard)
 
