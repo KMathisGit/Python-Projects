@@ -87,13 +87,14 @@ def play_game(board):
         mark_board(currentPlayer, board)
         check_condition(currentPlayer, board)
     answer = raw_input("Do you want to play again? (Y/N):")
-    if answer == 'Y' or 'y':
+    if answer == "Y" or answer == "y":
         board = ['[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]','[ ]']
         play_game(board)
     else:
-        pass
+        ongoing = False
  
 #Calling driver function
-play_game(theBoard)
+while ongoing == True:
+    play_game(theBoard)
 
     
